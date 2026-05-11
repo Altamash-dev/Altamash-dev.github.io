@@ -6,75 +6,110 @@
     <title>OOP Java Project</title>
 
     <style>
-        body{
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
             font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-            margin: 0;
-            padding: 0;
+        }
+
+        body{
+            background-color:#f4f8fc;
+            color:#222;
         }
 
         header{
-            background-color: #2c3e50;
-            color: white;
-            padding: 20px;
-            text-align: center;
+            background:#0d6efd;
+            color:white;
+            padding:30px;
+            text-align:center;
+        }
+
+        header h1{
+            font-size:40px;
+            margin-bottom:10px;
+        }
+
+        header p{
+            font-size:18px;
         }
 
         .container{
-            width: 80%;
-            margin: auto;
-            margin-top: 30px;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px gray;
+            width:85%;
+            margin:40px auto;
+        }
+
+        .card{
+            background:white;
+            padding:30px;
+            margin-bottom:25px;
+            border-radius:12px;
+            box-shadow:0px 4px 10px rgba(0,0,0,0.08);
         }
 
         h2{
-            color: #2c3e50;
+            color:#0d6efd;
+            margin-bottom:15px;
+        }
+
+        p{
+            line-height:1.7;
+            font-size:17px;
+        }
+
+        ul{
+            margin-top:10px;
+            padding-left:20px;
+        }
+
+        li{
+            margin-bottom:10px;
+            font-size:17px;
         }
 
         table{
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        table, th, td{
-            border: 1px solid black;
+            width:100%;
+            border-collapse:collapse;
+            margin-top:20px;
         }
 
         th{
-            background-color: #3498db;
-            color: white;
-            padding: 10px;
+            background:#0d6efd;
+            color:white;
+            padding:14px;
         }
 
         td{
-            padding: 10px;
-            text-align: center;
+            padding:12px;
+            border-bottom:1px solid #ddd;
+            text-align:center;
+        }
+
+        tr:hover{
+            background:#eef5ff;
         }
 
         button{
-            background-color: #27ae60;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            margin-top: 20px;
-            border-radius: 5px;
-            cursor: pointer;
+            background:#0d6efd;
+            color:white;
+            border:none;
+            padding:12px 25px;
+            border-radius:6px;
+            margin-top:20px;
+            cursor:pointer;
+            font-size:16px;
         }
 
         button:hover{
-            background-color: #219150;
+            background:#0b5ed7;
         }
 
         footer{
-            text-align: center;
-            background-color: #2c3e50;
-            color: white;
-            padding: 10px;
-            margin-top: 30px;
+            background:#0d6efd;
+            color:white;
+            text-align:center;
+            padding:18px;
+            margin-top:40px;
         }
     </style>
 </head>
@@ -82,69 +117,90 @@
 <body>
 
     <header>
-        <h1>Object Oriented Programming in Java</h1>
-        <p>Mini Project Website</p>
+        <h1>Object Oriented Programming Project</h1>
+        <p>Java Based Mini Project Website</p>
     </header>
 
     <div class="container">
 
-        <h2>About Project</h2>
-        <p>
-            This project demonstrates the concepts of Object Oriented Programming
-            such as Class, Object, Inheritance, Polymorphism, Abstraction,
-            and Encapsulation using Java.
-        </p>
+        <div class="card">
+            <h2>About The Project</h2>
 
-        <h2>OOP Concepts</h2>
+            <p>
+                This website is created for demonstrating the concepts of 
+                Object Oriented Programming using Java. The project explains 
+                important OOP principles such as Classes, Objects, Inheritance,
+                Polymorphism, Abstraction and Encapsulation.
+            </p>
 
-        <table>
-            <tr>
-                <th>Concept</th>
-                <th>Description</th>
-            </tr>
+            <button onclick="showMessage()">Learn More</button>
+        </div>
 
-            <tr>
-                <td>Class</td>
-                <td>Blueprint of an object</td>
-            </tr>
+        <div class="card">
+            <h2>OOP Concepts Used</h2>
 
-            <tr>
-                <td>Object</td>
-                <td>Instance of a class</td>
-            </tr>
+            <table>
+                <tr>
+                    <th>Concept</th>
+                    <th>Description</th>
+                </tr>
 
-            <tr>
-                <td>Inheritance</td>
-                <td>Acquiring properties of another class</td>
-            </tr>
+                <tr>
+                    <td>Class</td>
+                    <td>Blueprint for creating objects</td>
+                </tr>
 
-            <tr>
-                <td>Polymorphism</td>
-                <td>One function with many forms</td>
-            </tr>
+                <tr>
+                    <td>Object</td>
+                    <td>Instance of a class</td>
+                </tr>
 
-            <tr>
-                <td>Encapsulation</td>
-                <td>Binding data and methods together</td>
-            </tr>
+                <tr>
+                    <td>Inheritance</td>
+                    <td>Acquiring properties from another class</td>
+                </tr>
 
-            <tr>
-                <td>Abstraction</td>
-                <td>Showing essential details only</td>
-            </tr>
-        </table>
+                <tr>
+                    <td>Polymorphism</td>
+                    <td>One method with multiple forms</td>
+                </tr>
 
-        <button onclick="showMessage()">Click Here</button>
+                <tr>
+                    <td>Encapsulation</td>
+                    <td>Binding data and methods together</td>
+                </tr>
+
+                <tr>
+                    <td>Abstraction</td>
+                    <td>Showing only important details</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="card">
+            <h2>Project Team</h2>
+
+            <ul>
+                <li>Altamash</li>
+                <li>Rohan</li>
+                <li>Rushi</li>
+                <li>Ayyan</li>
+            </ul>
+
+            <p style="margin-top:15px;">
+                This project was successfully designed and developed by the above team members as part of the OOP Java project.
+            </p>
+        </div>
 
     </div>
 
     <footer>
-        <p>© 2026 OOP Java Project</p>
+        <p>© 2026 OOP Java Project | Designed by Team</p>
     </footer>
 
     <script>
-        function showMessage() {
-            alert("Welcome to OOP Java Project!");
+        function showMessage(){
+            alert("Welcome to the OOP Java Project Website!");
         }
     </script>
 
