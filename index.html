@@ -6,6 +6,7 @@
     <title>OOP Java Project</title>
 
     <style>
+
         *{
             margin:0;
             padding:0;
@@ -49,7 +50,7 @@
 
         h2{
             color:#0d6efd;
-            margin-bottom:15px;
+            margin-bottom:20px;
         }
 
         p{
@@ -65,28 +66,6 @@
         li{
             margin-bottom:10px;
             font-size:17px;
-        }
-
-        table{
-            width:100%;
-            border-collapse:collapse;
-            margin-top:20px;
-        }
-
-        th{
-            background:#0d6efd;
-            color:white;
-            padding:14px;
-        }
-
-        td{
-            padding:12px;
-            border-bottom:1px solid #ddd;
-            text-align:center;
-        }
-
-        tr:hover{
-            background:#eef5ff;
         }
 
         button{
@@ -111,6 +90,39 @@
             padding:18px;
             margin-top:40px;
         }
+
+        .calculator{
+            display:grid;
+            grid-template-columns:repeat(4,1fr);
+            gap:15px;
+        }
+
+        .calculator button{
+            padding:18px;
+            font-size:20px;
+            border:none;
+            border-radius:10px;
+            background:#0d6efd;
+            color:white;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        .calculator button:hover{
+            background:#0b5ed7;
+        }
+
+        #display{
+            width:100%;
+            height:60px;
+            font-size:25px;
+            margin-bottom:20px;
+            text-align:right;
+            padding:10px;
+            border:1px solid #ccc;
+            border-radius:8px;
+        }
+
     </style>
 </head>
 
@@ -124,59 +136,59 @@
     <div class="container">
 
         <div class="card">
+
             <h2>About The Project</h2>
 
             <p>
                 This website is created for demonstrating the concepts of 
                 Object Oriented Programming using Java. The project explains 
-                important OOP principles such as Classes, Objects, Inheritance,
-                Polymorphism, Abstraction and Encapsulation.
+                important OOP principles and also includes a functional 
+                scientific calculator built using HTML, CSS and JavaScript.
             </p>
 
             <button onclick="showMessage()">Learn More</button>
+
         </div>
 
         <div class="card">
 
-    <h2>Scientific Calculator</h2>
+            <h2>Scientific Calculator</h2>
 
-    <input type="text" id="display" 
-    style="width:100%; height:60px; font-size:25px; 
-    margin-bottom:20px; text-align:right; padding:10px;
-    border:1px solid #ccc; border-radius:8px;" readonly>
+            <input type="text" id="display" readonly>
 
-    <div class="calculator">
+            <div class="calculator">
 
-        <button onclick="appendValue('7')">7</button>
-        <button onclick="appendValue('8')">8</button>
-        <button onclick="appendValue('9')">9</button>
-        <button onclick="appendValue('/')">/</button>
+                <button onclick="appendValue('7')">7</button>
+                <button onclick="appendValue('8')">8</button>
+                <button onclick="appendValue('9')">9</button>
+                <button onclick="appendValue('/')">/</button>
 
-        <button onclick="appendValue('4')">4</button>
-        <button onclick="appendValue('5')">5</button>
-        <button onclick="appendValue('6')">6</button>
-        <button onclick="appendValue('*')">*</button>
+                <button onclick="appendValue('4')">4</button>
+                <button onclick="appendValue('5')">5</button>
+                <button onclick="appendValue('6')">6</button>
+                <button onclick="appendValue('*')">*</button>
 
-        <button onclick="appendValue('1')">1</button>
-        <button onclick="appendValue('2')">2</button>
-        <button onclick="appendValue('3')">3</button>
-        <button onclick="appendValue('-')">-</button>
+                <button onclick="appendValue('1')">1</button>
+                <button onclick="appendValue('2')">2</button>
+                <button onclick="appendValue('3')">3</button>
+                <button onclick="appendValue('-')">-</button>
 
-        <button onclick="appendValue('0')">0</button>
-        <button onclick="appendValue('.')">.</button>
-        <button onclick="calculate()">=</button>
-        <button onclick="appendValue('+')">+</button>
+                <button onclick="appendValue('0')">0</button>
+                <button onclick="appendValue('.')">.</button>
+                <button onclick="calculate()">=</button>
+                <button onclick="appendValue('+')">+</button>
 
-        <button onclick="clearDisplay()">C</button>
-        <button onclick="squareRoot()">√</button>
-        <button onclick="power()">x²</button>
-        <button onclick="appendValue('%')">%</button>
+                <button onclick="clearDisplay()">C</button>
+                <button onclick="squareRoot()">√</button>
+                <button onclick="power()">x²</button>
+                <button onclick="appendValue('%')">%</button>
 
-    </div>
+            </div>
 
-</div>
+        </div>
 
         <div class="card">
+
             <h2>Project Team</h2>
 
             <ul>
@@ -184,11 +196,13 @@
                 <li>Rohan</li>
                 <li>Rushi</li>
                 <li>Ayyan</li>
+                <li>Vaibhav</li>
             </ul>
 
             <p style="margin-top:15px;">
                 This project was successfully designed and developed by the above team members as part of the OOP Java project.
             </p>
+
         </div>
 
     </div>
@@ -198,9 +212,39 @@
     </footer>
 
     <script>
+
         function showMessage(){
             alert("Welcome to the OOP Java Project Website!");
         }
+
+        function appendValue(value){
+            document.getElementById("display").value += value;
+        }
+
+        function clearDisplay(){
+            document.getElementById("display").value = "";
+        }
+
+        function calculate(){
+            try{
+                document.getElementById("display").value =
+                eval(document.getElementById("display").value);
+            }
+            catch{
+                alert("Invalid Expression");
+            }
+        }
+
+        function squareRoot(){
+            let value = document.getElementById("display").value;
+            document.getElementById("display").value = Math.sqrt(value);
+        }
+
+        function power(){
+            let value = document.getElementById("display").value;
+            document.getElementById("display").value = value * value;
+        }
+
     </script>
 
 </body>
